@@ -1,0 +1,46 @@
+{
+  "name": "SimpleVideoMeeting",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "setup": "yarn install && yarn pod-install",
+    "setup:assets": "npx react-native link",
+    "setup:jetify": "npx jetify",
+    "pod-install": "cd ios && pod install",
+    "before-build": "yarn remove:node-modules && yarn remove:pods && yarn setup",
+    "remove:node-modules": "rm -rf node_modules",
+    "remove:pods": "cd ios && rm -rf Pods",
+    "do:clean": "watchman watch-del-all && cd android && ./gradlew clean"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-navigation/native": "^5.9.4",
+    "@react-navigation/stack": "^5.14.4",
+    "@videosdk.live/react-native-incallmanager": "^0.0.4",
+    "@videosdk.live/react-native-sdk": "^0.0.24",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "^3.1.1",
+    "react-native-video": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/runtime": "^7.17.2",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.10.0",
+    "jest": "^27.5.1",
+    "metro-react-native-babel-preset": "^0.69.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
